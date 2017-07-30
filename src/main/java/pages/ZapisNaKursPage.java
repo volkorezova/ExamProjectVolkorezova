@@ -42,6 +42,29 @@ public class ZapisNaKursPage extends ParentPage {
     @FindBy(xpath = ".//*[@class='alert alert-success']")
     private WebElement successAlert;
 
+
+    //xpaths for alert with errors
+    @FindBy(xpath = ".//*[@class='alert alert-error']/ul/li[1]")
+    private WebElement wrongValuaSurname;
+
+    @FindBy(xpath = ".//*[@class='alert alert-error']/ul/li[2]")
+    private WebElement wrongValuaName;
+
+    @FindBy(xpath = ".//*[@class='alert alert-error']/ul/li[3]")
+    private WebElement wrongValuaPhoneNumber;
+
+    @FindBy(xpath = ".//*[@class='alert alert-error']/ul/li[4]")
+    private WebElement wrongValuaEMail;
+
+    @FindBy(xpath = ".//*[@class='alert alert-error']/ul/li[5]")
+    private WebElement wrongValuaSkype;
+
+    @FindBy(xpath = ".//*[@class='alert alert-error']/ul/li[6]")
+    private WebElement wrongValuaKnowSource;
+
+
+    WebElement[] masLocators = {chooseKursDD, inputSurname, inputEMail, inputName, inputPhoneNumber, inputSkype, questionArea, knowSorceDD };
+
     public ZapisNaKursPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -105,5 +128,44 @@ public class ZapisNaKursPage extends ParentPage {
     public boolean isSuccessAlertIsPresent(){
         actionWithElements.isElementPresent(successAlert);
         return false;
+    }
+
+    public void clickOnElementDDChooseCource(){
+        actionWithElements.clickOnElement(chooseKursDD);
+
+    }
+
+    public boolean isErroWrongSurnamerPresent(){
+        return actionWithElements.isElementPresent(wrongValuaSurname);
+    }
+
+    public boolean isErroWrongNamePresent(){
+        return actionWithElements.isElementPresent(wrongValuaName);
+    }
+
+    public boolean isErroWrongPhonePresent(){
+        return actionWithElements.isElementPresent(wrongValuaPhoneNumber);
+    }
+
+    public boolean isErroWrongEmailPresent(){
+        return actionWithElements.isElementPresent(wrongValuaEMail);
+    }
+
+    public boolean isErroWrongSkypePresent(){
+        return actionWithElements.isElementPresent(wrongValuaSkype);
+    }
+
+    public boolean isErroWrongKnowSourcePresent(){
+        return actionWithElements.isElementPresent(wrongValuaKnowSource);
+    }
+
+    public boolean areAllFieldsAreCleared() {
+
+        for (int i = 0; i <= 7; i++) {
+            if (masLocators[i].getAttribute("value") != "") {
+                return false;
+            }
+        }
+        return true;
     }
 }
