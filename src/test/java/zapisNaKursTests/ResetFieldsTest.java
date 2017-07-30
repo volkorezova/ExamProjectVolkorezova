@@ -14,12 +14,14 @@ public class ResetFieldsTest extends ParentTest {
        // zapisNaKursPage.clickOnElementDDChooseCource();
        // zapisNaKursPage.selectElementFromDDTypeOfKursByValue(" Базовый модуль тестирования ПО ( дневная группа)");
        // zapisNaKursPage.selectElementFromDDByTextTypeKurs(" Android");
+        zapisNaKursPage.selectElementFromDDByIndexKursType(7);
         zapisNaKursPage.enterSurname("Volkorezova");
         zapisNaKursPage.enterName("Tatyna");
         zapisNaKursPage.enterPhone("0665678789");
         zapisNaKursPage.enterEmail("qqq@qqq.com");
         zapisNaKursPage.enterSkype("wwwwwwwww");
       //  zapisNaKursPage.selectElementFromDDKnowSorceByValue(" рекламная листовка/ визитка/ буклет");
+        zapisNaKursPage.selectElementFromDDKnowSourceByIndex(6);
         zapisNaKursPage.fillQuestionArea("area area area area aretcccff");
         zapisNaKursPage.clickButtonReset();
         checkAC("Fields aren't cleared", zapisNaKursPage.areAllFieldsAreCleared(),true);

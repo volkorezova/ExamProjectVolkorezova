@@ -111,6 +111,21 @@ public class ActionWithElements {
 
     }
 
+    public void selectTextInDDByIndex(WebElement dropDown, int index){
+        try{
+            Select optionsFromDD = new Select(dropDown);
+            optionsFromDD.selectByIndex(index);
+            logger.info(index + " was selected in dropdown");
+
+        }catch(Exception e){
+            logger.error("Can not work with element DropDown" + index);
+            Assert.fail("Can not work with element DropDown" + index);
+        }
+
+
+    }
+
+
     public void checkCheckBox(WebElement checkbox) {
         try{
             if(!checkbox.isSelected()){

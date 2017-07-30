@@ -11,15 +11,17 @@ public class ZapisNaKursTests extends ParentTest{
     @Test
     public void validZapisNaKur(){
         zapisNaKursPage.openZapisNaKursPage();
-        zapisNaKursPage.clickOnElementDDChooseCource();
+        //zapisNaKursPage.clickOnElementDDChooseCource();
        // zapisNaKursPage.selectElementFromDDTypeOfKursByValue(" Базовый модуль тестирования ПО ( дневная группа)");
-        zapisNaKursPage.selectElementFromDDByTextTypeKurs(" Android");
+        //zapisNaKursPage.selectElementFromDDByTextTypeKurs(" Android");
+        zapisNaKursPage.selectElementFromDDByIndexKursType(3);
         zapisNaKursPage.enterSurname("Volkorezova");
         zapisNaKursPage.enterName("Tatyna");
         zapisNaKursPage.enterPhone("0665678789");
         zapisNaKursPage.enterEmail("qqq@qqq.com");
         zapisNaKursPage.enterSkype("wwwwwwwww");
-        zapisNaKursPage.selectElementFromDDKnowSorceByValue(" рекламная листовка/ визитка/ буклет");
+        zapisNaKursPage.selectElementFromDDKnowSourceByIndex(1);
+        //  zapisNaKursPage.selectElementFromDDKnowSorceByValue(" рекламная листовка/ визитка/ буклет");
         zapisNaKursPage.fillQuestionArea("area area area area aretcccff");
         zapisNaKursPage.clickButtonSend();
         checkAC("Success alert isn't displayed", zapisNaKursPage.isSuccessAlertIsPresent(),true);

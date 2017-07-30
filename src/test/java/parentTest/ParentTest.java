@@ -61,14 +61,23 @@ import static org.hamcrest.CoreMatchers.is;
 
         @After
         public void tearDown() {
-            webDriver.quit();
+            if (!(webDriver==null)){
+                if (!isTestPass) {
+                    utils.screenShot(pathToScreenShot, webDriver);
+                }
+                webDriver.quit();
+            }
         }
 
         public void checkAC(String message, boolean actualResult, boolean expectedResult){
             Assert.assertThat(message, actualResult, is (expectedResult));
+            setTestPass();
 
         }
 
+    private void setTestPass() {
+        isTestPass=true;
+    }
 
     }
 

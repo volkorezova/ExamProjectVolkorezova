@@ -83,6 +83,11 @@ public class ZapisNaKursPage extends ParentPage {
         actionWithElements.selectTextInDDByText(chooseKursDD, text);
     }
 
+    public void selectElementFromDDByIndexKursType(int index){
+
+        actionWithElements.selectTextInDDByIndex(chooseKursDD, index);
+    }
+
 
     public void enterSurname(String surName){
         actionWithElements.enterText(inputSurname, surName);
@@ -113,6 +118,10 @@ public class ZapisNaKursPage extends ParentPage {
         actionWithElements.selectTextInDDByValue(knowSorceDD,valueFromDDSource);
     }
 
+    public void selectElementFromDDKnowSourceByIndex(int index){
+        actionWithElements.selectTextInDDByIndex(knowSorceDD, index);
+    }
+
     public void fillQuestionArea(String areaText){
         actionWithElements.enterText(questionArea, areaText);
     }
@@ -127,7 +136,7 @@ public class ZapisNaKursPage extends ParentPage {
 
     public boolean isSuccessAlertIsPresent(){
         actionWithElements.isElementPresent(successAlert);
-        return false;
+        return true;
     }
 
     public void clickOnElementDDChooseCource(){
