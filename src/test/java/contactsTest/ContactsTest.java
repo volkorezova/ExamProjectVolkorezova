@@ -19,6 +19,15 @@ public class ContactsTest extends ParentTest {
         checkAC("Message wasn't sent", contactsPage.checkIsThnxAlertIsPresent(),true);
     }
 
-    
+
+    @Test
+    public void callToQALight(){
+        contactsPage.openContactPage();
+        contactsPage.enterPhoneNumber("0665436363");
+        contactsPage.clickOnCallBtn();
+        checkAC("Contact data aren't sent", contactsPage.isSuccesLetterSend(),true);
+
+    }
+
 
 }

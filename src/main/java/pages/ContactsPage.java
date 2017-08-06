@@ -49,6 +49,9 @@ public class ContactsPage extends ParentPage {
     @FindBy(xpath = ".//*[@class='close']")
     private WebElement closeIcon;
 
+    @FindBy(xpath = "html/body")
+    private WebElement succsesLetterSend;
+
 
     public ContactsPage(WebDriver webDriver) {
         super(webDriver);
@@ -88,4 +91,16 @@ public class ContactsPage extends ParentPage {
         return true;
     }
 
+    public void clickOnCallBtn(){
+        actionWithElements.clickOnElement(phoneBtn);
+    }
+
+    public void enterPhoneNumber(String phone){
+        actionWithElements.enterText(phoneNumberRecallField, phone);
+    }
+
+    public boolean isSuccesLetterSend() {
+        actionWithElements.isElementPresent(succsesLetterSend);
+        return true;
+    }
 }

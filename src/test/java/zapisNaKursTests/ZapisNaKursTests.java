@@ -9,7 +9,7 @@ import parentTest.ParentTest;
 public class ZapisNaKursTests extends ParentTest{
 
     @Test
-    public void validZapisNaKur(){
+    public void validZapisNaKurs(){
         zapisNaKursPage.openZapisNaKursPage();
         //zapisNaKursPage.clickOnElementDDChooseCource();
        // zapisNaKursPage.selectElementFromDDTypeOfKursByValue(" Базовый модуль тестирования ПО ( дневная группа)");
